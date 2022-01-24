@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeEditText">
+
+    <fragment
+        android:id="@+id/homeEditText"
+        android:name="com.example.fifa.ui.fragment.HomeEditText"
+        android:label="fragment_home_edit_text"
+        tools:layout="@layout/fragment_home_edit_text" >
+        <action
+            android:id="@+id/action_homeEditText_to_userInfoText"
+            app:destination="@id/userInfoText" />
+    </fragment>
+    <fragment
+        android:id="@+id/userInfoText"
+        android:name="com.example.fifa.ui.fragment.UserInfoText"
+        android:label="fragment_user_info_text"
+        tools:layout="@layout/fragment_user_info_text" />
+</navigation>
