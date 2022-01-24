@@ -6,12 +6,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.fifa.R
-import com.example.fifa.data.Test
-import com.example.fifa.data.TestItem
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.fifa.data.MatchType
 import com.example.fifa.data.UserRanked
-import com.example.fifa.databinding.FragmentHomeEditTextBinding
 import com.example.fifa.databinding.FragmentUserInfoTextBinding
+import com.example.fifa.ui.adapter.RankedAdapter
 import com.example.fifa.util.Constants
 import retrofit2.Call
 import retrofit2.Callback
@@ -19,6 +19,7 @@ import retrofit2.Response
 
 class UserInfoText : Fragment() {
     private lateinit var binding: FragmentUserInfoTextBinding
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = FragmentUserInfoTextBinding.inflate(layoutInflater)
         val view = binding.root
@@ -36,22 +37,47 @@ class UserInfoText : Fragment() {
 
     private fun userRankedText() {
         val callGetUserRanked = Constants.api.getUserRanked("${Constants.KEY}","${arguments?.getString("accessid")}")
-        val callGetTest = Constants.api.getTest("${Constants.KEY}",", ${arguments?.getString("accessid")}")
 
-        callGetUserRanked.enqueue(object : Callback<ArrayList<UserRanked>> {
-            override fun onResponse(call: Call<ArrayList<UserRanked>>, response: Response<ArrayList<UserRanked>>) {
-                Log.e("awd","${response.body().toString()}")
-                binding.uesrDateText.text = response.body()?.get(0)?.achievementDate
-                binding.userDivisionText.text = response.body()?.get(0)?.division.toString()
-                binding.uesrMatchText.text = response.body()?.get(0)?.matchType.toString()
+        callGetUserRanked.enqueue(object : Callback<List<UserRanked>> {
+            override fun onResponse(call: Call<List<UserRanked>>, response: Response<List<UserRanked>>) {
+                val ranked = response.body()
 
-
+                ranked?.let {
+                    setAdapter(it as ArrayList<UserRanked>)
+                }
             }
 
-            override fun onFailure(call: Call<ArrayList<UserRanked>>, t: Throwable) {
-            }
+            override fun onFailure(call: Call<List<UserRanked>>, t: Throwable) {
 
+            }
         })
-
     }
+
+    private fun setAdapter(rankedList: ArrayList<UserRanked>) {
+        val mRankedAdapter = RankedAdapter(rankedList)
+        binding.rvRanked.adapter = mRankedAdapter
+        binding.rvRanked.layoutManager = LinearLayoutManager(context)
+    }
+
+    private fun matchType() {
+        val callGetMatchType = Constants.api.getMatchType()
+
+        callGetMatchType.enqueue(object : Callback<List<MatchType>> {
+            override fun onResponse(call: Call<List<MatchType>>, response: Response<List<MatchType>>) {
+                val match = response.body()
+
+                if (match != null) {
+                    for (index in 0 until match.size) {
+                        val type = match.get(index)
+
+                    }
+                }
+            }
+
+            override fun onFailure(call: Call<List<MatchType>>, t: Throwable) {
+
+            }
+        })
+    }
+
 }

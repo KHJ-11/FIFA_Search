@@ -1,6 +1,6 @@
 package com.example.fifa.api
 
-import com.example.fifa.data.Test
+import com.example.fifa.data.MatchType
 import com.example.fifa.data.UserInfo
 import com.example.fifa.data.UserRanked
 import retrofit2.Call
@@ -21,11 +21,10 @@ interface ApiService {
     fun getUserRanked(
         @Header("Authorization") Authorization: String,
         @Path("accessid") accessid: String
-    ): Call<ArrayList<UserRanked>>
+    ): Call<List<UserRanked>>
 
-    @GET("fifaonline4/v1.0/users/{accessid}/maxdivision")
-    fun getTest(
-        @Header("Authorization") Authorization: String,
-        @Path("accessid") accessid: String
-    ): Call<Test>
+    @GET("https://static.api.nexon.co.kr/fifaonline4/latest/matchtype.json")
+    fun getMatchType(
+    ): Call<List<MatchType>>
+
 }
