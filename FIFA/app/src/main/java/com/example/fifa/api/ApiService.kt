@@ -1,8 +1,6 @@
 package com.example.fifa.api
 
-import com.example.fifa.data.MatchType
-import com.example.fifa.data.UserInfo
-import com.example.fifa.data.UserRanked
+import com.example.fifa.data.*
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -26,5 +24,22 @@ interface ApiService {
     @GET("https://static.api.nexon.co.kr/fifaonline4/latest/matchtype.json")
     fun getMatchType(
     ): Call<List<MatchType>>
+
+    @GET("https://static.api.nexon.co.kr/fifaonline4/latest/division.json")
+    fun getDivisionType(
+    ): Call<List<DivisionType>>
+
+    @GET("fifaonline4/v1.0/users/{accessid}/markets?")
+    fun getTradeType(
+        @Header("Authorization") Authorization: String,
+        @Path("accessid") accessid: String,
+        @Query("tradetype") tradetype: String,
+        @Query("offset") offset: Int,
+        @Query("limit") limit: Int
+    ): Call<List<TradeType>>
+
+    @GET("https://static.api.nexon.co.kr/fifaonline4/latest/spid.json")
+    fun getSpidName(
+    ): Call<List<SpidName>>
 
 }

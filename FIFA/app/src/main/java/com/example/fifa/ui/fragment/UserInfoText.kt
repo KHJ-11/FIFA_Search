@@ -6,8 +6,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.fifa.R
 import com.example.fifa.data.MatchType
 import com.example.fifa.data.UserRanked
 import com.example.fifa.databinding.FragmentUserInfoTextBinding
@@ -26,6 +29,7 @@ class UserInfoText : Fragment() {
 
         userInfoText()
         userRankedText()
+        userButton()
 
         return view
     }
@@ -59,25 +63,17 @@ class UserInfoText : Fragment() {
         binding.rvRanked.layoutManager = LinearLayoutManager(context)
     }
 
-    private fun matchType() {
-        val callGetMatchType = Constants.api.getMatchType()
+    private fun userButton() {
+        binding.userButtonBuy.setOnClickListener {
+            val bundle = bundleOf(
+            "accessid" to arguments?.getString("accessid")
+            )
+            Navigation.findNavController(binding.root).navigate(R.id.action_userInfoText_to_buyRecord, bundle)
+        }
 
-        callGetMatchType.enqueue(object : Callback<List<MatchType>> {
-            override fun onResponse(call: Call<List<MatchType>>, response: Response<List<MatchType>>) {
-                val match = response.body()
-
-                if (match != null) {
-                    for (index in 0 until match.size) {
-                        val type = match.get(index)
-
-                    }
-                }
-            }
-
-            override fun onFailure(call: Call<List<MatchType>>, t: Throwable) {
-
-            }
-        })
+        binding.userButtonSell.setOnClickListener {
+            Navigation.findNavController(binding.root).navigate(R.id.action_userInfoText_to_sellRecord)
+        }
     }
 
 }

@@ -18,5 +18,22 @@
         android:id="@+id/userInfoText"
         android:name="com.example.fifa.ui.fragment.UserInfoText"
         android:label="fragment_user_info_text"
-        tools:layout="@layout/fragment_user_info_text" />
+        tools:layout="@layout/fragment_user_info_text" >
+        <action
+            android:id="@+id/action_userInfoText_to_buyRecord"
+            app:destination="@id/buyRecord" />
+        <action
+            android:id="@+id/action_userInfoText_to_sellRecord"
+            app:destination="@id/sellRecord" />
+    </fragment>
+    <fragment
+        android:id="@+id/sellRecord"
+        android:name="com.example.fifa.ui.fragment.SellRecord"
+        android:label="fragment_sell_record"
+        tools:layout="@layout/fragment_sell_record" />
+    <fragment
+        android:id="@+id/buyRecord"
+        android:name="com.example.fifa.ui.fragment.BuyRecord"
+        android:label="fragment_buy_record"
+        tools:layout="@layout/fragment_buy_record" />
 </navigation>

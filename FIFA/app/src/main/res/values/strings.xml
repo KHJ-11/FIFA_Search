@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">FIFA</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="test_text">test</string>
+    <string name="test_number">123</string>
+
+    <string name="nickname_info">감독 정보</string>
+    <string name="search">검색</string>
+    <string name="nickname_input">감독명 입력하기</string>
+    <string name="buy_record">구매기록</string>
+    <string name="sell_record">판매기록</string>
+
+    <string name="trade_spid">선수명</string>
+    <string name="trade_grade">강화등급</string>
+    <string name="trade_value">선수가치</string>
+
 </resources>
