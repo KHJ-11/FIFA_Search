@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_userInfoText_to_sellRecord"
             app:destination="@id/sellRecord" />
+        <action
+            android:id="@+id/action_userInfoText_to_matchPlay"
+            app:destination="@id/matchPlay" />
     </fragment>
     <fragment
         android:id="@+id/sellRecord"
@@ -36,4 +39,9 @@
         android:name="com.example.fifa.ui.fragment.BuyRecord"
         android:label="fragment_buy_record"
         tools:layout="@layout/fragment_buy_record" />
+    <fragment
+        android:id="@+id/matchPlay"
+        android:name="com.example.fifa.ui.fragment.MatchPlay"
+        android:label="fragment_match_play"
+        tools:layout="@layout/fragment_match_play" />
 </navigation>

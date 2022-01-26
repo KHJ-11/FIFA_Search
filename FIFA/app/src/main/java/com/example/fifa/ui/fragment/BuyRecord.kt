@@ -31,7 +31,7 @@ class BuyRecord : Fragment() {
     }
 
     private fun userBuyTrade() {
-        val callGetTradeType = Constants.api.getTradeType("${Constants.KEY}","${arguments?.getString("accessid")}","buy",1,10)
+        val callGetTradeType = Constants.api.getTradeType("${Constants.KEY}","${arguments?.getString("accessid")}","buy",1,5)
 
         callGetTradeType.enqueue(object : Callback<List<TradeType>> {
             override fun onResponse(call: Call<List<TradeType>>, response: Response<List<TradeType>>) {

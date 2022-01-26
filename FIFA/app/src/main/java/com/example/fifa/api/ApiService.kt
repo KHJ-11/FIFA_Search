@@ -42,4 +42,13 @@ interface ApiService {
     fun getSpidName(
     ): Call<List<SpidName>>
 
+    @GET("fifaonline4/v1.0/users/{accessid}/matches?")
+    fun getMatchPlay(
+        @Header("Authorization") Authorization: String,
+        @Path("accessid") accessid: String,
+        @Query("matchtype") matchtype: Int,
+        @Query("offset") offset: Int,
+        @Query("limit") limit: Int
+    ): Call<List<PlayMatch>>
+
 }

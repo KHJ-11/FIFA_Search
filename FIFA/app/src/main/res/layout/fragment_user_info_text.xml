@@ -138,9 +138,12 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/userButtonPlay"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:text="플레이기록"
+                    android:gravity="center"/>
 
                 <Button
                     android:layout_width="0dp"

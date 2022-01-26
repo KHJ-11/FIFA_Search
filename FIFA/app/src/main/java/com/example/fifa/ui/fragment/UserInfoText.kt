@@ -49,6 +49,7 @@ class UserInfoText : Fragment() {
                 ranked?.let {
                     setAdapter(it as ArrayList<UserRanked>)
                 }
+
             }
 
             override fun onFailure(call: Call<List<UserRanked>>, t: Throwable) {
@@ -72,8 +73,19 @@ class UserInfoText : Fragment() {
         }
 
         binding.userButtonSell.setOnClickListener {
-            Navigation.findNavController(binding.root).navigate(R.id.action_userInfoText_to_sellRecord)
+            val bundle = bundleOf(
+                "accessid" to arguments?.getString("accessid")
+            )
+            Navigation.findNavController(binding.root).navigate(R.id.action_userInfoText_to_sellRecord, bundle)
         }
+
+        binding.userButtonPlay.setOnClickListener {
+            val bundle = bundleOf(
+                "accessid" to arguments?.getString("accessid")
+            )
+            Navigation.findNavController(binding.root).navigate(R.id.action_userInfoText_to_matchPlay, bundle)
+        }
+
     }
 
 }

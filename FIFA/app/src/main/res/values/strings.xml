@@ -13,5 +13,19 @@
     <string name="trade_spid">선수명</string>
     <string name="trade_grade">강화등급</string>
     <string name="trade_value">선수가치</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="matchPlayType">
+        <item>30</item>
+        <item>40</item>
+        <item>50</item>
+        <item>52</item>
+        <item>60</item>
+        <item>204</item>
+        <item>214</item>
+        <item>224</item>
+        <item>234</item>
+    </string-array>
 
 </resources>
