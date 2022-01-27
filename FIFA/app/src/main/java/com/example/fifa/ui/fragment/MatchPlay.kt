@@ -1,7 +1,6 @@
 package com.example.fifa.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,11 +8,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fifa.R
 import com.example.fifa.data.PlayMatch
-import com.example.fifa.data.TradeType
 import com.example.fifa.databinding.FragmentMatchPlayBinding
 import com.example.fifa.ui.adapter.PlayAdapter
-import com.example.fifa.ui.adapter.TradeAdapter
 import com.example.fifa.util.Constants
+import com.google.gson.JsonArray
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -25,31 +23,54 @@ class MatchPlay : Fragment() {
         val view = binding.root
 
         userPlayMatch()
-        Log.e("awdawd2123213","awdawd?zzz")
 
         return view
     }
 
     private fun userPlayMatch() {
-        val type = R.array.matchPlayType.toString()
-        val callGetPlayMatch = Constants.api.getMatchPlay("${Constants.KEY}","${arguments?.getString("accessid")}",52,1,10)
 
-        callGetPlayMatch.enqueue(object : Callback<List<PlayMatch>> {
-            override fun onResponse(call: Call<List<PlayMatch>>, response: Response<List<PlayMatch>>) {
-                val play = response.body()
-                Log.e("awdawd","${play}")
-            }
+        val type = resources.getStringArray(R.array.matchPlayType)
 
-            override fun onFailure(call: Call<List<PlayMatch>>, t: Throwable) {
+        for (playInt in 0 until type.size) {
 
-            }
+            val callGetPlayTest = Constants.api.getPlayTest(
+                "${Constants.KEY}",
+                "${arguments?.getString("accessid")}",
+                52,
+                1,
+                10
+            )
 
-        })
+            callGetPlayTest.enqueue(object : Callback<JsonArray> {
+                override fun onResponse(call: Call<JsonArray>, response: Response<JsonArray>) {
+
+                    val play = response.body()
+
+                    fun viewData(): ArrayList<PlayMatch> {
+                        val list = arrayListOf<PlayMatch>()
+                        return list.apply {
+
+                            if (play != null) {
+                                for (index in 0 until play.size()) {
+                                    add(PlayMatch("${play.get(index)}"))
+                                }
+                            }
+
+                        }
+                    }
+
+                    val mPlayAdapter = PlayAdapter(viewData())
+                    binding.rvPlayMatch.adapter = mPlayAdapter
+                    binding.rvPlayMatch.layoutManager = LinearLayoutManager(context)
+                }
+
+                override fun onFailure(call: Call<JsonArray>, t: Throwable) {
+
+                }
+
+            })
+
+        }
     }
 
-    private fun setAdapter(playList: ArrayList<PlayMatch>) {
-        val mPlayAdapter = PlayAdapter(playList)
-        binding.rvPlayMatch.adapter = mPlayAdapter
-        binding.rvPlayMatch.layoutManager = LinearLayoutManager(context)
-    }
 }

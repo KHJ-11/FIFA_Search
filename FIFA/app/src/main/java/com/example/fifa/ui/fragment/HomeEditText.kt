@@ -40,12 +40,18 @@ class HomeEditText : Fragment() {
         callGetUserInfo.enqueue(object : Callback<UserInfo> {
             override fun onResponse(call: Call<UserInfo>, response: Response<UserInfo>) {
                 val user = response.body()
-                val bundle = bundleOf(
-                    "nickname" to user?.nickname,
-                    "level" to user?.level,
-                    "accessid" to user?.accessId
-                )
-                Navigation.findNavController(binding.root).navigate(R.id.action_homeEditText_to_userInfoText, bundle)
+
+                if (binding.homeEditText.text.toString() != user?.nickname) {
+                    Navigation.findNavController(binding.root).navigate(R.id.action_homeEditText_to_failSearch)
+                } else {
+                    val bundle = bundleOf(
+                        "nickname" to user?.nickname,
+                        "level" to user?.level,
+                        "accessid" to user?.accessId
+                    )
+                    Navigation.findNavController(binding.root).navigate(R.id.action_homeEditText_to_userInfoText, bundle)
+                }
+
             }
 
             override fun onFailure(call: Call<UserInfo>, t: Throwable) {

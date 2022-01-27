@@ -1,6 +1,7 @@
 package com.example.fifa.api
 
 import com.example.fifa.data.*
+import com.google.gson.JsonArray
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -50,5 +51,14 @@ interface ApiService {
         @Query("offset") offset: Int,
         @Query("limit") limit: Int
     ): Call<List<PlayMatch>>
+
+    @GET("fifaonline4/v1.0/users/{accessid}/matches?")
+    fun getPlayTest(
+        @Header("Authorization") Authorization: String,
+        @Path("accessid") accessid: String,
+        @Query("matchtype") matchtype: Int,
+        @Query("offset") offset: Int,
+        @Query("limit") limit: Int
+    ) : Call<JsonArray>
 
 }

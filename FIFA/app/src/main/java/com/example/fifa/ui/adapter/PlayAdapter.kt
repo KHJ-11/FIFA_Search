@@ -12,17 +12,11 @@ class PlayAdapter(private val playList: ArrayList<PlayMatch>)
     : RecyclerView.Adapter<PlayAdapter.Playholder>() {
 
     inner class Playholder(rowRoot: View) : RecyclerView.ViewHolder(rowRoot) {
-        val platItem: TextView = rowRoot.findViewById(R.id.playMatch)
+        val playItem: TextView = rowRoot.findViewById(R.id.playMatch)
 
         fun setData(item: PlayMatch) {
-            platItem.text = item.playMatch
-        }
-    }
+            playItem.text = item.playMatch.replace("[^A-Za-z0-9]".toRegex(), "")
 
-    fun viewData(): ArrayList<PlayMatch> {
-        val list = arrayListOf<PlayMatch>()
-        return list.apply {
-            add(PlayMatch())
         }
     }
 
@@ -38,4 +32,5 @@ class PlayAdapter(private val playList: ArrayList<PlayMatch>)
     override fun getItemCount(): Int {
         return playList.size
     }
+
 }

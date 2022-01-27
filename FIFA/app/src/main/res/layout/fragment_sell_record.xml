@@ -16,7 +16,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="판매 기록"
+            android:text="@string/sell_info"
             android:gravity="center"
             android:textSize="20sp"/>
 
