@@ -13,6 +13,7 @@ import com.example.fifa.util.Constants
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
 import kotlin.collections.ArrayList
 
 class RankedAdapter(private val rankedList: ArrayList<UserRanked>)
@@ -26,7 +27,7 @@ class RankedAdapter(private val rankedList: ArrayList<UserRanked>)
         fun setData(item: UserRanked) {
             matchItem.text = item.matchType.toString()
             divisionItem.text = item.division.toString()
-            dateItem.text = item.achievementDate
+            dateItem.text = item.achievementDate.substring(0,10)
 
             val callGetMatchType = Constants.api.getMatchType()
             val callGetDivisionType = Constants.api.getDivisionType()

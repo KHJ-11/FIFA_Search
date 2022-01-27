@@ -4,7 +4,15 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.fragment.HomeEditText"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,14 +29,19 @@
             android:textSize="20sp"
             android:gravity="center"
             android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"/>
+            android:layout_marginRight="30dp"
+            android:background="@drawable/back_edittext"
+            android:fontFamily="@font/nexon_football_gothic_b"/>
 
         <Button
             android:id="@+id/homeButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:text="@string/search"/>
+            android:layout_marginTop="20dp"
+            android:text="@string/search"
+            android:gravity="center"
+            android:fontFamily="@font/nexon_football_gothic_l"
+            android:background="@drawable/back_button"/>
 
     </LinearLayout>
 

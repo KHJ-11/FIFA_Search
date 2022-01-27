@@ -12,7 +12,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="50" />
+        android:text="50"
+        android:fontFamily="@font/nexon_football_gothic_l"/>
 
     <TextView
         android:id="@+id/rankedDivision"
@@ -20,7 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="2700" />
+        android:text="2700"
+        android:fontFamily="@font/nexon_football_gothic_l"/>
 
     <TextView
         android:id="@+id/rankedDate"
@@ -28,6 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="2"
         android:gravity="center"
-        android:text="2018-10-10" />
+        android:text="2018-10-10"
+        android:fontFamily="@font/nexon_football_gothic_l"/>
 
 </LinearLayout>

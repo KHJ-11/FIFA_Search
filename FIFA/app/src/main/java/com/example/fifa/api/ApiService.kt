@@ -61,4 +61,10 @@ interface ApiService {
         @Query("limit") limit: Int
     ) : Call<JsonArray>
 
+    @GET("fifaonline4/v1.0/matches/{matchid}")
+    fun getMatchValues(
+        @Header("Authorization") Authorization: String,
+        @Path("matchid") matchId: String
+    ) : Call<MatchValues>
+
 }

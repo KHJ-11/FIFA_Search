@@ -6,7 +6,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fifa.R
+import com.example.fifa.data.MatchValues
 import com.example.fifa.data.PlayMatch
+import com.example.fifa.util.Constants
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class PlayAdapter(private val playList: ArrayList<PlayMatch>)
     : RecyclerView.Adapter<PlayAdapter.Playholder>() {
@@ -17,6 +22,18 @@ class PlayAdapter(private val playList: ArrayList<PlayMatch>)
         fun setData(item: PlayMatch) {
             playItem.text = item.playMatch.replace("[^A-Za-z0-9]".toRegex(), "")
 
+            val callGetMatchValues =Constants.api.getMatchValues("${Constants.KEY}","${item.playMatch.replace("[^A-Za-z0-9]".toRegex(), "")}")
+
+            callGetMatchValues.enqueue(object : Callback<MatchValues> {
+                override fun onResponse(call: Call<MatchValues>, response: Response<MatchValues>) {
+
+                }
+
+                override fun onFailure(call: Call<MatchValues>, t: Throwable) {
+
+                }
+
+            })
         }
     }
 

@@ -19,4 +19,6 @@
     <color name="black">#4F555B</color>
     <color name="black_s">#446669</color>
     <color name="black_t">#EDF4FA</color>
+    <color name="green">#94D50C</color>
+    <color name="textcolor">#4A4A4E</color>
 </resources>

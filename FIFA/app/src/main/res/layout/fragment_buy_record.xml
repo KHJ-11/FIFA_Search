@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:text="@string/buy_info"
             android:gravity="center"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:fontFamily="@font/nexon_football_gothic_b"/>
 
         <View
             android:layout_width="match_parent"
@@ -41,21 +42,24 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2.5"
                 android:gravity="center"
-                android:text="@string/trade_spid"/>
+                android:text="@string/trade_spid"
+                android:fontFamily="@font/nexon_football_gothic_b"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="@string/trade_grade"/>
+                android:text="@string/trade_grade"
+                android:fontFamily="@font/nexon_football_gothic_b"/>
 
             <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:gravity="center"
-                android:text="@string/trade_value"/>
+                android:text="@string/trade_value"
+                android:fontFamily="@font/nexon_football_gothic_b"/>
 
         </LinearLayout>
 
