@@ -23,8 +23,7 @@
         android:textStyle="bold"
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
-        android:fontFamily="@font/nexon_football_gothic_b"
-        android:textSize="16sp"/>
+        android:fontFamily="@font/nexon_football_gothic_b" />
 
     <TextView
         android:id="@+id/tradeGrade"
@@ -36,8 +35,7 @@
         android:layout_marginLeft="5dp"
         android:layout_marginRight="5dp"
         android:textStyle="bold"
-        android:fontFamily="@font/nexon_football_gothic_b"
-        android:textSize="16sp"/>
+        android:fontFamily="@font/nexon_football_gothic_b" />
 
     <TextView
         android:id="@+id/tradeValue"
@@ -48,7 +46,6 @@
         android:gravity="center"
         android:textStyle="bold"
         android:layout_marginLeft="5dp"
-        android:fontFamily="@font/nexon_football_gothic_b"
-        android:textSize="16sp"/>
+        android:fontFamily="@font/nexon_football_gothic_b" />
 
 </LinearLayout>

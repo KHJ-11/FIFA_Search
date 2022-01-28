@@ -44,15 +44,6 @@ interface ApiService {
     ): Call<List<SpidName>>
 
     @GET("fifaonline4/v1.0/users/{accessid}/matches?")
-    fun getMatchPlay(
-        @Header("Authorization") Authorization: String,
-        @Path("accessid") accessid: String,
-        @Query("matchtype") matchtype: Int,
-        @Query("offset") offset: Int,
-        @Query("limit") limit: Int
-    ): Call<List<PlayMatch>>
-
-    @GET("fifaonline4/v1.0/users/{accessid}/matches?")
     fun getPlayTest(
         @Header("Authorization") Authorization: String,
         @Path("accessid") accessid: String,
@@ -67,4 +58,7 @@ interface ApiService {
         @Path("matchid") matchId: String
     ) : Call<MatchValues>
 
+    @GET("https://static.api.nexon.co.kr/fifaonline4/latest/seasonid.json")
+    fun getSeasonId(
+    ): Call<List<SeasonIdItem>>
 }

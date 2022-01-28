@@ -154,7 +154,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:text="@string/play_record"
+                    android:text="감독모드"
                     android:gravity="center"
                     android:fontFamily="@font/nexon_football_gothic_b"
                     android:background="@drawable/back_button_color"
@@ -164,8 +164,11 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:text="공식경기"
                     android:background="@drawable/back_button_color"
-                    android:layout_margin="5dp"/>
+                    android:layout_margin="5dp"
+                    android:gravity="center"
+                    android:fontFamily="@font/nexon_football_gothic_b"/>
 
             </LinearLayout>
 

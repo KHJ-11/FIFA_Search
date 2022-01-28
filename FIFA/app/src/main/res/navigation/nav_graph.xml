@@ -46,7 +46,11 @@
         android:id="@+id/matchPlay"
         android:name="com.example.fifa.ui.fragment.MatchPlay"
         android:label="fragment_match_play"
-        tools:layout="@layout/fragment_match_play" />
+        tools:layout="@layout/fragment_match_play" >
+        <action
+            android:id="@+id/action_matchPlay_to_matchDetail"
+            app:destination="@id/matchDetail" />
+    </fragment>
     <fragment
         android:id="@+id/failSearch"
         android:name="com.example.fifa.ui.fragment.FailSearch"
@@ -59,4 +63,9 @@
             app:destination="@id/homeEditText"/>
 
     </fragment>
+    <fragment
+        android:id="@+id/matchDetail"
+        android:name="com.example.fifa.ui.fragment.MatchDetail"
+        android:label="fragment_match_detail"
+        tools:layout="@layout/fragment_match_detail" />
 </navigation>

@@ -18,7 +18,8 @@
             android:layout_height="wrap_content"
             android:text="@string/play_info"
             android:gravity="center"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            android:fontFamily="@font/nexon_football_gothic_b"/>
 
         <View
             android:layout_width="match_parent"
