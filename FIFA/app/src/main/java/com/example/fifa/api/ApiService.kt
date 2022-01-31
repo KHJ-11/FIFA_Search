@@ -58,7 +58,17 @@ interface ApiService {
         @Path("matchid") matchId: String
     ) : Call<MatchValues>
 
+    @GET("fifaonline4/v1.0/matches/{matchid}")
+    fun getPlayer(
+        @Header("Authorization") Authorization: String,
+        @Path("matchid") matchId: String
+    ) : Call<List<Player>>
+
     @GET("https://static.api.nexon.co.kr/fifaonline4/latest/seasonid.json")
     fun getSeasonId(
     ): Call<List<SeasonIdItem>>
+
+    @GET("https://static.api.nexon.co.kr/fifaonline4/latest/spposition.json")
+    fun  getPositionName(
+    ): Call<List<PositionItem>>
 }

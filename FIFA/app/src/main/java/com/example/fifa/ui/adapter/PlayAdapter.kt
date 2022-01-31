@@ -40,6 +40,18 @@ class PlayAdapter(private val playList: ArrayList<PlayMatch>)
                         setValues(response.body()!!)
 
                     }
+
+                    itemView.setOnClickListener {
+                        val bundle = bundleOf(
+                            "nicknameHome" to play?.matchInfo?.get(0)?.nickname,
+                            "nicknameAway" to play?.matchInfo?.get(1)?.nickname,
+                            "goalHome" to play?.matchInfo?.get(0)?.shoot?.goalTotalDisplay.toString(),
+                            "goalAway" to play?.matchInfo?.get(1)?.shoot?.goalTotalDisplay.toString(),
+                            "result" to play?.matchInfo?.get(0)?.matchDetail?.matchResult,
+                            "matchId" to matchIds
+                        )
+                        Navigation.findNavController(itemView).navigate(R.id.action_matchPlay_to_matchDetail, bundle)
+                    }
                 }
 
                 override fun onFailure(call: Call<MatchValues>, t: Throwable) {
@@ -66,15 +78,16 @@ class PlayAdapter(private val playList: ArrayList<PlayMatch>)
                 result.setTextColor(Color.RED)
             }
 
-            itemView.setOnClickListener {
-                val bundle = bundleOf(
-                    "nicknameHome" to value.matchInfo.get(0).nickname,
-                    "nicknameAway" to value.matchInfo.get(1).nickname,
-                    "goalHome" to value.matchInfo.get(0).shoot.goalTotalDisplay.toString(),
-                    "goalAway" to value.matchInfo.get(1).shoot.goalTotalDisplay.toString()
-                )
-                Navigation.findNavController(itemView).navigate(R.id.action_matchPlay_to_matchDetail, bundle)
-            }
+//            itemView.setOnClickListener {
+//                val bundle = bundleOf(
+//                    "nicknameHome" to value.matchInfo.get(0).nickname,
+//                    "nicknameAway" to value.matchInfo.get(1).nickname,
+//                    "goalHome" to value.matchInfo.get(0).shoot.goalTotalDisplay.toString(),
+//                    "goalAway" to value.matchInfo.get(1).shoot.goalTotalDisplay.toString(),
+//                    "result" to value.matchInfo.get(0).matchDetail.matchResult
+//                )
+//                Navigation.findNavController(itemView).navigate(R.id.action_matchPlay_to_matchDetail, bundle)
+//            }
 
 //            value.matchInfo.forEach {
 //                nameAwayItem.text = it.nickname
