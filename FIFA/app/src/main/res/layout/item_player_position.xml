@@ -9,39 +9,36 @@
         android:id="@+id/positionColor"
         android:layout_width="10dp"
         android:layout_height="40dp"
-        android:background="@color/green"/>
+        android:background="@color/green"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="1dp"
+        android:layout_marginTop="1dp"/>
 
     <TextView
         android:id="@+id/positionName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="ST"
-        android:fontFamily="@font/nexon_football_gothic_b"
-        android:textSize="20sp"
+        android:layout_weight="1"
         android:layout_gravity="center"
-        android:layout_marginLeft="5dp"/>
+        android:text="ST"
+        android:textSize="20sp"/>
 
     <ImageView
-        android:id="@+id/seasonIcon"
+        android:id="@+id/seasonId"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:src="@drawable/back_gold"
-        android:layout_marginLeft="30dp"/>
+        android:layout_height="wrap_content"
+        android:src="@drawable/back_black"
+        android:layout_gravity="center"
+        android:layout_marginRight="10dp"/>
 
     <TextView
         android:id="@+id/playerName"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="루드 굴리트"
+        android:layout_weight="3"
         android:layout_gravity="center"
-        android:fontFamily="@font/nexon_football_gothic_l"
-        android:textSize="20sp"
-        android:layout_marginLeft="5dp"/>
-
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_weight="1"/>
+        android:text="루드 굴리트"
+        android:textSize="20sp"/>
 
     <TextView
         android:id="@+id/playerGrade"
@@ -49,9 +46,8 @@
         android:layout_height="wrap_content"
         android:background="@drawable/back_gold"
         android:layout_gravity="center"
-        android:text="8"
         android:gravity="center"
-        android:fontFamily="@font/nexon_football_gothic_l"
-        android:layout_marginRight="5dp"/>
+        android:layout_marginRight="20dp"
+        android:text="8"/>
 
 </LinearLayout>

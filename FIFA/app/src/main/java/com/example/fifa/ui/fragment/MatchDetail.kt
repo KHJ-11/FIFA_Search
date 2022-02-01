@@ -2,23 +2,21 @@ package com.example.fifa.ui.fragment
 
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fifa.R
-import com.example.fifa.data.MatchValues
-import com.example.fifa.data.Player
-import com.example.fifa.data.TradeType
+import com.example.fifa.data.*
 import com.example.fifa.databinding.FragmentMatchDetailBinding
-import com.example.fifa.ui.adapter.PlayerListAdapter
-import com.example.fifa.ui.adapter.TradeAdapter
+import com.example.fifa.ui.adapter.PlayerAdapter
 import com.example.fifa.util.Constants
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MatchDetail : Fragment() {
     private lateinit var binding: FragmentMatchDetailBinding
@@ -47,33 +45,29 @@ class MatchDetail : Fragment() {
             binding.tvMatchResultTotal.setTextColor(Color.RED)
         }
 
-//        binding.btPlayerListHome.setOnClickListener {
-//            val callGetPlayer = Constants.api.getPlayer("${Constants.KEY}","${arguments?.getString("matchId")}")
-//
-//            callGetPlayer.enqueue(object : Callback<List<Player>> {
-//                override fun onResponse(call: Call<List<Player>>, response: Response<List<Player>>) {
-//                    val player = response.body()
-//
-//                    player.let {
-//                        setAdapter(it as ArrayList<Player>)
-//                        Log.e("2kl","12323")
-//                    }
-//                }
-//
-//                override fun onFailure(call: Call<List<Player>>, t: Throwable) {
-//
-//                }
-//
-//            })
-//        }
-
         val callGetMatchValues = Constants.api.getMatchValues("${Constants.KEY}","${arguments?.getString("matchId")}")
 
         callGetMatchValues.enqueue(object : Callback<MatchValues> {
             override fun onResponse(call: Call<MatchValues>, response: Response<MatchValues>) {
+                val player = response.body()
+                val playerHome = player?.matchInfo?.get(0)?.player
+                val playerAway = player?.matchInfo?.get(1)?.player
+
+                binding.btPlayerListHome.setOnClickListener {
+                    binding.btPlayerListHome.setBackgroundResource(R.color.green)
+                    binding.btPlayerListAway.setBackgroundColor(Color.GRAY)
+
+                    playerHome.let {
+                        setAdapter(it as ArrayList<Player>)
+                    }
+                }
                 binding.btPlayerListAway.setOnClickListener {
-                    Log.e("awd","213123")
-                    
+                    binding.btPlayerListAway.setBackgroundResource(R.color.green)
+                    binding.btPlayerListHome.setBackgroundColor(Color.GRAY)
+
+                    playerAway.let {
+                        setAdapter(it as ArrayList<Player>)
+                    }
                 }
             }
 
@@ -85,10 +79,11 @@ class MatchDetail : Fragment() {
 
     }
 
-    private fun setAdapter(playeredList: ArrayList<Player>) {
-        val mPlayeredAdapter = PlayerListAdapter(playeredList)
-        binding.rvPlayerList.adapter = mPlayeredAdapter
+    private fun setAdapter(playerList: ArrayList<Player>) {
+        val mPlayerAdapter = PlayerAdapter(playerList)
+        binding.rvPlayerList.adapter = mPlayerAdapter
         binding.rvPlayerList.layoutManager = LinearLayoutManager(context)
+        playerList.sortBy { it.spPosition }
     }
 
 }
