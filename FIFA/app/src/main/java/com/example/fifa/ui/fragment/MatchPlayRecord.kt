@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fifa.R
 import com.example.fifa.data.PlayMatch
@@ -60,6 +61,7 @@ class MatchPlayRecord : Fragment() {
                 val mPlayAdapter = PlayAdapter(viewData())
                 binding.rvPlayMatch.adapter = mPlayAdapter
                 binding.rvPlayMatch.layoutManager = LinearLayoutManager(context)
+                binding.rvPlayMatch.addItemDecoration(DividerItemDecoration(binding.rvPlayMatch.context, LinearLayoutManager(context).orientation))
             }
 
             override fun onFailure(call: Call<JsonArray>, t: Throwable) {

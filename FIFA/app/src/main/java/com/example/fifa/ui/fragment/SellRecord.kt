@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fifa.R
 import com.example.fifa.data.TradeType
@@ -27,7 +28,7 @@ class SellRecord : Fragment() {
     }
 
     private fun userSellTrade() {
-        val callGetTradeType = Constants.api.getTradeType("${Constants.KEY}","${arguments?.getString("accessid")}","sell",1,5)
+        val callGetTradeType = Constants.api.getTradeType("${Constants.KEY}","${arguments?.getString("accessid")}","sell",1,10)
 
         callGetTradeType.enqueue(object : Callback<List<TradeType>> {
             override fun onResponse(call: Call<List<TradeType>>, response: Response<List<TradeType>>) {
@@ -49,6 +50,7 @@ class SellRecord : Fragment() {
         val mTradeAdapter = TradeAdapter(tradeList)
         binding.rvBuyRecord.adapter = mTradeAdapter
         binding.rvBuyRecord.layoutManager = LinearLayoutManager(context)
+        binding.rvBuyRecord.addItemDecoration(DividerItemDecoration(binding.rvBuyRecord.context, LinearLayoutManager(context).orientation))
     }
 
 }

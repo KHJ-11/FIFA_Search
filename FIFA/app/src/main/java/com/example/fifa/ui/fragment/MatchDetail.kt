@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.fifa.R
 import com.example.fifa.data.*
@@ -83,6 +84,7 @@ class MatchDetail : Fragment() {
         val mPlayerAdapter = PlayerAdapter(playerList)
         binding.rvPlayerList.adapter = mPlayerAdapter
         binding.rvPlayerList.layoutManager = LinearLayoutManager(context)
+        binding.rvPlayerList.addItemDecoration(DividerItemDecoration(binding.rvPlayerList.context, LinearLayoutManager(context).orientation))
         playerList.sortBy { it.spPosition }
     }
 

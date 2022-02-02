@@ -11,8 +11,8 @@
         android:layout_height="40dp"
         android:background="@color/green"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="1dp"
-        android:layout_marginTop="1dp"/>
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"/>
 
     <TextView
         android:id="@+id/positionName"
@@ -21,7 +21,8 @@
         android:layout_weight="1"
         android:layout_gravity="center"
         android:text="ST"
-        android:textSize="20sp"/>
+        android:textSize="17sp"
+        android:fontFamily="@font/nexon_football_gothic_b"/>
 
     <ImageView
         android:id="@+id/seasonId"
@@ -37,7 +38,8 @@
         android:layout_weight="3"
         android:layout_gravity="center"
         android:text="루드 굴리트"
-        android:textSize="20sp"/>
+        android:textSize="17sp"
+        android:fontFamily="@font/nexon_football_gothic_b"/>
 
     <TextView
         android:id="@+id/playerGrade"
@@ -47,6 +49,7 @@
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_marginRight="20dp"
-        android:text="8"/>
+        android:text="8"
+        android:fontFamily="@font/nexon_football_gothic_b"/>
 
 </LinearLayout>

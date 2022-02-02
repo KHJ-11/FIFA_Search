@@ -97,8 +97,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="선수 리스트"
-                android:textSize="20sp"
-                android:gravity="center"/>
+                android:textSize="17sp"
+                android:gravity="center"
+                android:fontFamily="@font/nexon_football_gothic_l"/>
 
             <View
                 android:layout_width="match_parent"
