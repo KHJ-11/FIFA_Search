@@ -4,28 +4,28 @@
 
 메인화면
 
-<img width="324" alt="KakaoTalk_20220202_182521731" src="https://user-images.githubusercontent.com/72050086/152141323-75980705-9ad9-47d6-90d0-f76d5e327f74.png">
+<img width="324" alt="1" src="https://user-images.githubusercontent.com/72050086/152143245-543dfef1-2f2e-4c1b-90ad-e314a622bb24.png">
 
 감독정보
 
-<img width="323" alt="KakaoTalk_20220202_182521731_01" src="https://user-images.githubusercontent.com/72050086/152141306-4bd12a26-9b42-4fe6-a28e-6c44ab24834e.png">
+<img width="323" alt="2" src="https://user-images.githubusercontent.com/72050086/152143246-7235f00e-bb87-401a-98ef-bc2705686601.png">
 
 구매기록
 
-<img width="324" alt="KakaoTalk_20220202_182521731_02" src="https://user-images.githubusercontent.com/72050086/152141310-1bc457cd-567c-4b4f-935b-9692fe840f35.png">
+<img width="324" alt="3" src="https://user-images.githubusercontent.com/72050086/152143228-d59bcea6-615a-43bb-857c-39624fe7f654.png">
 
 판매기록
 
-<img width="322" alt="KakaoTalk_20220202_182521731_03" src="https://user-images.githubusercontent.com/72050086/152141313-75f4ba92-f619-45fd-8d0c-fd8494b5f2b2.png">
+<img width="322" alt="4" src="https://user-images.githubusercontent.com/72050086/152143235-dc6b807d-9e31-4f8d-9125-1b346934aefa.png">
 
 경기기록
 
-<img width="324" alt="KakaoTalk_20220202_182521731_04" src="https://user-images.githubusercontent.com/72050086/152141317-52965b3f-4cff-4bcd-b104-0b6646962ede.png">
+<img width="322" alt="5" src="https://user-images.githubusercontent.com/72050086/152143651-e91de673-d2f9-4cef-b9cf-cea60c9627b9.png">
 
 본인팀 선수명단
 
-<img width="322" alt="KakaoTalk_20220202_182521731_05" src="https://user-images.githubusercontent.com/72050086/152141320-2bd11843-bd2a-497d-b99e-f9cd60f7ca4b.png">
+<img width="322" alt="6" src="https://user-images.githubusercontent.com/72050086/152143666-b332d292-a981-4475-bae3-8ede7dd1c210.png">
 
 상대팀 선수명단
 
-<img width="322" alt="KakaoTalk_20220202_182521731_06" src="https://user-images.githubusercontent.com/72050086/152141321-3f68ad75-47e3-4996-8000-ab7d0a7050d7.png">
+<img width="324" alt="7" src="https://user-images.githubusercontent.com/72050086/152143673-e983d1aa-13db-4548-924e-c36e2c87e751.png">
