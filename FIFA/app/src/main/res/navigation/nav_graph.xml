@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_userInfoText_to_matchPlay"
             app:destination="@id/matchPlay" />
+        <action
+            android:id="@+id/action_userInfoText_to_matchPlayRecord"
+            app:destination="@id/matchPlayRecord" />
     </fragment>
     <fragment
         android:id="@+id/sellRecord"
@@ -68,4 +71,13 @@
         android:name="com.example.fifa.ui.fragment.MatchDetail"
         android:label="fragment_match_detail"
         tools:layout="@layout/fragment_match_detail" />
+    <fragment
+        android:id="@+id/matchPlayRecord"
+        android:name="com.example.fifa.ui.fragment.MatchPlayRecord"
+        android:label="fragment_match_play_record"
+        tools:layout="@layout/fragment_match_play_record" >
+        <action
+            android:id="@+id/action_matchPlayRecord_to_matchDetail"
+            app:destination="@id/matchDetail" />
+    </fragment>
 </navigation>

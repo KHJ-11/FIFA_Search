@@ -32,8 +32,6 @@ class MatchPlay : Fragment() {
 
         val type = resources.getStringArray(R.array.matchPlayType)
 
-//        for (playInt in 0 until type.size) {
-
             val callGetPlayTest = Constants.api.getPlayTest(
                 "${Constants.KEY}",
                 "${arguments?.getString("accessid")}",
@@ -72,6 +70,5 @@ class MatchPlay : Fragment() {
             })
 
         }
-//    }
 
 }

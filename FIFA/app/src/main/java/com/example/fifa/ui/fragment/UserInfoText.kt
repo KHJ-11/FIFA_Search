@@ -86,6 +86,13 @@ class UserInfoText : Fragment() {
             Navigation.findNavController(binding.root).navigate(R.id.action_userInfoText_to_matchPlay, bundle)
         }
 
+        binding.userButtonPlayM.setOnClickListener {
+            val bundle = bundleOf(
+                "accessid" to arguments?.getString("accessid")
+            )
+            Navigation.findNavController(binding.root).navigate(R.id.action_userInfoText_to_matchPlayRecord, bundle)
+        }
+
     }
 
 }
