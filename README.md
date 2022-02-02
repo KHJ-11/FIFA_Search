@@ -17,6 +17,7 @@ Nexon 개발자센터에서 제공하는 Open Api를 사용한 모바일 전적�
 ### [라이브러리]
 * Retrofit2
 * Glide
+* Jetpack Navigation
 
 ### [Preview]
 
