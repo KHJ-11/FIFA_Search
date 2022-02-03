@@ -25,6 +25,10 @@ Nexon 개발자센터에서 제공하는 Open Api를 사용한 모바일 전적�
 
 <img width="324" alt="1" src="https://user-images.githubusercontent.com/72050086/152143245-543dfef1-2f2e-4c1b-90ad-e314a622bb24.png">
 
+실패화면
+
+<img width="324" alt="8" src="https://user-images.githubusercontent.com/72050086/152263700-e64b85e0-8767-4b32-905a-75e60f918be1.png">
+
 감독정보
 
 <img width="323" alt="2" src="https://user-images.githubusercontent.com/72050086/152143246-7235f00e-bb87-401a-98ef-bc2705686601.png">
